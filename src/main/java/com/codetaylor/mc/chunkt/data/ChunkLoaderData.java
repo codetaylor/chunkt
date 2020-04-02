@@ -52,7 +52,7 @@ public class ChunkLoaderData
         world.forceChunk(ChunkPos.getX(chunkL), ChunkPos.getZ(chunkL), true);
       }
 
-      DebugUtil.debug("Loaded [" + this.loadersPerChunkCount.size() + "] chunks", world);
+      DebugUtil.debug("Loaded [" + this.loadersPerChunkCount.size() + "] chunks in [" + world.dimension.getType().getRegistryName() + "]", world);
     }
   }
 
@@ -99,6 +99,11 @@ public class ChunkLoaderData
       }
       this.markDirty();
     }
+  }
+
+  public LongSet getChunks() {
+
+    return this.loadersPerChunkCount.keySet();
   }
 
   @Override
