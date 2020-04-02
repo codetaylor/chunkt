@@ -1,7 +1,6 @@
 package com.codetaylor.mc.chunkt.data;
 
 import com.codetaylor.mc.chunkt.ChunktMod;
-import com.codetaylor.mc.chunkt.util.DebugUtil;
 import it.unimi.dsi.fastutil.longs.Long2IntMap;
 import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
@@ -52,7 +51,7 @@ public class ChunkLoaderData
         world.forceChunk(ChunkPos.getX(chunkL), ChunkPos.getZ(chunkL), true);
       }
 
-      DebugUtil.debug("Loaded [" + this.loadersPerChunkCount.size() + "] chunks in [" + world.dimension.getType().getRegistryName() + "]", world);
+      ChunktMod.LOGGER.info("Loaded [{}] chunks in [{}]", this.loadersPerChunkCount.size(), world.dimension.getType().getRegistryName());
     }
   }
 
@@ -68,7 +67,7 @@ public class ChunkLoaderData
 
       if (count == 0) {
         world.forceChunk(chunkX, chunkZ, true);
-        DebugUtil.debug("Loaded chunk @ [" + chunkX + "," + chunkZ + "] in [" + world.dimension.getType().getRegistryName() + "]", world);
+        ChunktMod.LOGGER.info("Loaded chunk @ [{},{}] in [{}]", chunkX, chunkZ, world.dimension.getType().getRegistryName());
       }
 
       this.loadersPerChunkCount.put(chunkL, ++count);
@@ -87,7 +86,7 @@ public class ChunkLoaderData
 
       if (--count <= 0) {
         world.forceChunk(chunkX, chunkZ, false);
-        DebugUtil.debug("Unloaded chunk @ [" + chunkX + "," + chunkZ + "]", world);
+        ChunktMod.LOGGER.info("Unloaded chunk @ [{},{}] in [{}]", chunkX, chunkZ, world.dimension.getType().getRegistryName());
         this.loadersPerChunkCount.remove(chunkL);
 
       } else {
