@@ -69,13 +69,9 @@ public class ChunkLoaderData
       if (count == 0) {
         world.forceChunk(chunkX, chunkZ, true);
         DebugUtil.debug("Loaded chunk @ [" + chunkX + "," + chunkZ + "]", world);
-        count = 1;
-
-      } else {
-        count += 1;
       }
 
-      this.loadersPerChunkCount.put(chunkL, count);
+      this.loadersPerChunkCount.put(chunkL, ++count);
       this.loaderPositions.add(posL);
       this.markDirty();
     }
