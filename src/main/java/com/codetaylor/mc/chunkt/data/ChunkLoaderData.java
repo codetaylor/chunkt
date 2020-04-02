@@ -68,7 +68,7 @@ public class ChunkLoaderData
 
       if (count == 0) {
         world.forceChunk(chunkX, chunkZ, true);
-        DebugUtil.debug("Loaded chunk @ [" + chunkX + "," + chunkZ + "]", world);
+        DebugUtil.debug("Loaded chunk @ [" + chunkX + "," + chunkZ + "] in [" + world.dimension.getType().getRegistryName() + "]", world);
       }
 
       this.loadersPerChunkCount.put(chunkL, ++count);
