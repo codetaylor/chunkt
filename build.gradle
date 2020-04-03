@@ -21,7 +21,7 @@ def getVersionName = { String workTree ->
     return stdout.toString().trim()
 }
 
-version = "1.14.4-" + getVersionName("${project.projectDir}")
+version = getVersionName("${project.projectDir}")
 group = 'com.codetaylor.mc.chunkt' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'chunkt'
 
