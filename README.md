@@ -1,5 +1,5 @@
 * [Download](https://curseforge.com/minecraft/mc-mods/chunkt)
-* [CHANGELOG](https://github.com/codetaylor/chunkt/blob/master/1.14/docs/changelog.md)
+* [CHANGELOG](https://github.com/codetaylor/chunkt/blob/master/1.15/docs/changelog.md)
 
 This mod provides a chunk loader block that keeps a chunk loaded using Vanilla's /forceload logic under the hood and provides the added benefit of continuing to supply loaded chunks with random block ticks. This means that your grass and mushrooms will continue to spread and crops will continue to grow while you're away. The blocks are lightweight and don't use any tile entities.
 
