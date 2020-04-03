@@ -73,7 +73,7 @@ public class EventHandler {
             BlockState blockState = chunksection.getBlockState(blockPos.getX() - xStart, blockPos.getY() - yStart, blockPos.getZ() - zStart);
 
             if (blockState.ticksRandomly()) {
-              blockState.func_227033_a_(world, blockPos, world.rand);
+              blockState.randomTick(world, blockPos, world.rand);
             }
 
             IFluidState fluidState = blockState.getFluidState();
