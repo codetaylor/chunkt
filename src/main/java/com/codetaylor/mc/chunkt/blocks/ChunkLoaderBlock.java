@@ -4,9 +4,12 @@ import com.codetaylor.mc.chunkt.data.ChunkLoaderData;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+
+import javax.annotation.Nonnull;
 
 public class ChunkLoaderBlock
     extends Block {
@@ -36,5 +39,12 @@ public class ChunkLoaderBlock
       ChunkLoaderData data = ChunkLoaderData.get(serverWorld);
       data.remove(serverWorld, pos);
     }
+  }
+
+  @Nonnull
+  @Override
+  public PushReaction getPushReaction(BlockState blockState) {
+
+    return PushReaction.BLOCK;
   }
 }
