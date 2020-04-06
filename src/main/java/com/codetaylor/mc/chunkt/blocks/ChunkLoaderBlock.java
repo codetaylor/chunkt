@@ -18,7 +18,7 @@ public class ChunkLoaderBlock
 
   public ChunkLoaderBlock() {
 
-    super(Properties.from(Blocks.IRON_BLOCK));
+    super(Properties.from(Blocks.IRON_BLOCK).harvestLevel(0));
   }
 
   @Override
