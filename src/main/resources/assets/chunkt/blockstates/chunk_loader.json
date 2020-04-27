@@ -1,0 +1,9 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "chunkt:block/chunk_loader"
+  },
+  "variants": {
+    "normal": [{}]
+  }
+}

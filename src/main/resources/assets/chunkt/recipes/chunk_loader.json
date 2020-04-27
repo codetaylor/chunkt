@@ -1,0 +1,20 @@
+{
+  "result": {
+    "item": "chunkt:chunk_loader",
+    "count": 16
+  },
+  "pattern": [
+    "iii",
+    "idi",
+    "iii"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  }
+}
