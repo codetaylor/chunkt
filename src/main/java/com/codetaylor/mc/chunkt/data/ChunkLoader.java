@@ -209,6 +209,10 @@ public class ChunkLoader
 
     ListMultimap<String, ForgeChunkManager.Ticket> result = ArrayListMultimap.create();
 
+    if (nbtTagLongArray$dataGetter == null) {
+      return result;
+    }
+
     for (final Map.Entry<String, Collection<ForgeChunkManager.Ticket>> entry : tickets.asMap().entrySet()) {
 
       for (ForgeChunkManager.Ticket ticket : entry.getValue()) {
