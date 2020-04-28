@@ -11,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 
@@ -47,7 +48,11 @@ public class ChunkLoaderBlock
 
     if (!world.isRemote && placer instanceof EntityPlayer) {
       WorldServer worldServer = (WorldServer) world;
-      ChunkLoader.getInstance().add(worldServer, pos, (EntityPlayer) placer);
+
+      if (!ChunkLoader.getInstance().add(worldServer, pos, (EntityPlayer) placer)) {
+        placer.sendMessage(new TextComponentString("You have exceeded the server's loaded chunk limit"));
+        world.destroyBlock(pos, true);
+      }
     }
   }
 
