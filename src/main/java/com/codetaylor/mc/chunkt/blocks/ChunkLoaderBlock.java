@@ -3,6 +3,7 @@ package com.codetaylor.mc.chunkt.blocks;
 import com.codetaylor.mc.chunkt.ChunktMod;
 import com.codetaylor.mc.chunkt.data.ChunkLoader;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,19 +29,10 @@ public class ChunkLoaderBlock
     this.setCreativeTab(CreativeTabs.MISC);
     this.setRegistryName(new ResourceLocation(ChunktMod.MODID, ChunkLoaderBlock.NAME));
     this.setTranslationKey(ChunktMod.MODID + "." + NAME);
-  }
-
-  @Override
-  public int getHarvestLevel(@Nonnull IBlockState state) {
-
-    return 0;
-  }
-
-  @Nonnull
-  @Override
-  public CreativeTabs getCreativeTab() {
-
-    return CreativeTabs.MISC;
+    this.setHardness(5);
+    this.setResistance(10);
+    this.setSoundType(SoundType.METAL);
+    this.setHarvestLevel("pickaxe", 0);
   }
 
   @Override
