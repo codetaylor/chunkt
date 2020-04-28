@@ -49,8 +49,6 @@ public class ChunkLoader
     }
   }
 
-  private static final String DATA_ID = ChunktMod.MODID + "_" + ChunkLoader.class.getSimpleName();
-
   private static ChunkLoader INSTANCE;
 
   public static ChunkLoader getInstance() {
